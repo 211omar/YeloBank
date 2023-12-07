@@ -1,0 +1,25 @@
+@mixin flexible(
+  $jc: null,
+  $ai: null,
+  $wrap: null,
+  $direction: null,
+  $gp: null
+) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+  gap: $gp;
+}
+
+
+@mixin breakpoint($value){
+    @if mas-has-key($breakpoints, $value){
+        @media (min-width:#{map-get($breakpoints, $value)}) {
+            @content;
+        }
+    } @else{
+        @warn 'siz duzgun yazmadiniz myau!'
+    }
+};
