@@ -1,32 +1,154 @@
 {
-  "blogs": [
+  "data": [
     {
-      "id": 1,
-      "title": "Yelo Bank Artiq Masallida",
-      "date": "12.07.2023"
+      "title": "yelobank masallida 1",
+      "date": "2023-12-08T11:37:22.170Z",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Yelo Bank Artiq Masallida2",
-      "date": "12.07.2023"
+      "title": "yelobank masallida 2",
+      "date": "2023-12-08T11:37:47.353Z",
+      "id": 2
     },
     {
+      "title": "yelobank masallida 3",
+      "date": "2023-12-08T11:37:59.289Z",
       "id": 3
     },
     {
+      "title": "yelobank masallida 4",
+      "date": "2023-12-08T11:39:57.224Z",
       "id": 4
     },
     {
+      "title": "yelobank masallida 5",
+      "date": "2023-12-08T11:40:07.852Z",
       "id": 5
     },
     {
+      "title": "yelobank masallida 6",
+      "date": "2023-12-08T11:40:07.852Z",
       "id": 6
     },
     {
-      "id": 7
+      "title": "yelobank masallida 4",
+      "date": "2023-12-08T11:39:57.224Z",
+      "id": 4
     },
     {
-      "id": 8
+      "title": "yelobank masallida 5",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 5
+    },
+    {
+      "title": "yelobank masallida 6",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 6
+    },
+    {
+      "title": "yelobank masallida 4",
+      "date": "2023-12-08T11:39:57.224Z",
+      "id": 4
+    },
+    {
+      "title": "yelobank masallida 5",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 5
+    },
+    {
+      "title": "yelobank masallida 6",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 6
+    },
+    {
+      "title": "yelobank masallida 4",
+      "date": "2023-12-08T11:39:57.224Z",
+      "id": 4
+    },
+    {
+      "title": "yelobank masallida 5",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 5
+    },
+    {
+      "title": "yelobank masallida 6",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 6
+    },
+    {
+      "title": "yelobank masallida 4",
+      "date": "2023-12-08T11:39:57.224Z",
+      "id": 4
+    },
+    {
+      "title": "yelobank masallida 5",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 5
+    },
+    {
+      "title": "yelobank masallida 6",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 6
+    },
+    {
+      "title": "yelobank masallida 4",
+      "date": "2023-12-08T11:39:57.224Z",
+      "id": 4
+    },
+    {
+      "title": "yelobank masallida 5",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 5
+    },
+    {
+      "title": "yelobank masallida 6",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 6
+    },
+    {
+      "title": "yelobank masallida 4",
+      "date": "2023-12-08T11:39:57.224Z",
+      "id": 4
+    },
+    {
+      "title": "yelobank masallida 5",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 5
+    },
+    {
+      "title": "yelobank masallida 6",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 6
+    },
+    {
+      "title": "yelobank masallida 4",
+      "date": "2023-12-08T11:39:57.224Z",
+      "id": 4
+    },
+    {
+      "title": "yelobank masallida 5",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 5
+    },
+    {
+      "title": "yelobank masallida 6",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 6
+    },
+    {
+      "title": "yelobank masallida 4",
+      "date": "2023-12-08T11:39:57.224Z",
+      "id": 4
+    },
+    {
+      "title": "yelobank masallida 5",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 5
+    },
+    {
+      "title": "yelobank masallida 6",
+      "date": "2023-12-08T11:40:07.852Z",
+      "id": 6
     }
   ]
 }

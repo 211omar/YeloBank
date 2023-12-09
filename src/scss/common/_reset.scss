@@ -5,6 +5,9 @@
   text-decoration: none;
   list-style: none;
 }
+ul{
+  padding: 0;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -16,12 +19,14 @@ body {
 .container{
   max-width: 1140px;
   margin: auto;
+  padding: 0;
 }
 
 a{
   cursor: pointer;
   white-space: nowrap;
   color: $secondary-color;
+  text-decoration: none;
 }
 
 h1,

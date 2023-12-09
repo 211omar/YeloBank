@@ -4,11 +4,12 @@
   "description": "database",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json --port 1912"
+    "start": "json-server --watch db.json --port 1992"
   },
   "author": "omar",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.3.2",
     "json": "^11.0.0",
     "server": "^1.0.38"
   }
