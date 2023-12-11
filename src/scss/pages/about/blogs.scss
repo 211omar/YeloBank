@@ -405,11 +405,14 @@ main {
         }
       }
       .blogs_content {
-        @include flexible($wrap:wrap);
+        @include flexible($wrap: wrap);
         margin: 0;
-        .blog{
-          width: 33.3333%;
+        .blog {
+          width: 100%;
           padding: 20px;
+          @media (min-width: 1000px) {
+            width: 33.3333%;
+          }
           .col_content {
             margin-bottom: 10px;
             border-radius: 10px;

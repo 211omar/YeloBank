@@ -1264,6 +1264,9 @@ body {
 }
 
 /*BLOGS*/
+.blogs {
+  margin-top: 2rem;
+}
 .blogs .container .block_title .block_heading b {
   padding: 7px 0px;
 }

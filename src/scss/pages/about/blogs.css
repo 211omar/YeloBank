@@ -463,8 +463,13 @@ main .blogs .container .blogs_content {
   margin: 0;
 }
 main .blogs .container .blogs_content .blog {
-  width: 33.3333%;
+  width: 100%;
   padding: 20px;
+}
+@media (min-width: 1000px) {
+  main .blogs .container .blogs_content .blog {
+    width: 33.3333%;
+  }
 }
 main .blogs .container .blogs_content .blog .col_content {
   margin-bottom: 10px;
