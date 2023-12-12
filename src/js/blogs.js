@@ -1,5 +1,7 @@
 const urlAPI = "http://localhost:1992/data";
 
+
+
 const blogsContainer = document.querySelector(".blogs .container .block_title");
 const blogContent = document.createElement("div");
 blogContent.classList.add("blogs_content");
@@ -12,22 +14,43 @@ const date1 = newdate.toISOString();
 /*more blogs (slice)*/
 
 const moreBlogs = document.querySelector(".all_news");
-moreBlogs.addEventListener("click", () => console.log("all news clicked"));
+moreBlogs.addEventListener("click", () => {
+  console.log("all news clicked")
+  x++
+  console.log(x);
+});
+
+/*modal */
+const closeModal = document.querySelector('.close_modal')
+const modalContainer = document.querySelector('.post-modal')
+const modal = document.querySelector('.modal-inner')
+const addPostModal = document.querySelector('.addPostModal')
+addPostModal.addEventListener('click',()=>{
+  modalContainer.classList.remove('closed')
+  modal.classList.remove('close')
+
+})
+closeModal.addEventListener("click",()=>{
+  modalContainer.classList.add('closed')
+  modal.classList.add('close')
+})
 
 /* add posts*/
+
+const titleInput = document.getElementById('add_title')
+const titleValue =titleInput.value
 async function addPosts() {
   try {
     const request = await fetch(urlAPI, {
       method: "POST",
       body: JSON.stringify({
-        title: "yelobank masallida 3",
+        title: titleValue,
         date: `${date1}`,
       }),
       headers: {
         "content-type": "application/json",
       },
     });
-    const response = request.json();
 
     if (!response.ok) {
       throw "error";
@@ -44,7 +67,7 @@ async function getPost() {
     const request = await fetch(urlAPI);
     const res = await request.json();
     let content = "";
-    res.forEach((item) => {
+    res.slice(`0,${x}`).forEach((item) => {
       content = `
       <div class="blog  ">
       <div class="col_content ">
@@ -55,7 +78,9 @@ async function getPost() {
             <a href="#" class="arr_bttn">Daha etrafli</a>
             <span class="time">${new Date(item.date).toDateString()} </span>
           </div>
-          <button data-id="${item.id}" class='delete_button'>Delete Post</button>
+          <button data-id="${
+            item.id
+          }" class='delete_button'>Delete Post</button>
         </div>
       </div>
     </div>
@@ -77,21 +102,18 @@ async function deletePost() {
   try {
     setTimeout(() => {
       const deleteBtn = document.querySelectorAll(".delete_button");
-      // console.log(deleteBtn);
-      deleteBtn.forEach((btn) =>
-      btn.addEventListener("click", async function () {
-          console.log(btn)
-          const request = await fetch(`${urlAPI}/${btn.dataset.id}`,{
-            method:"DELETE"
+
+      deleteBtn.forEach((btn) => {
+        btn.addEventListener("click", async function () {
+          console.log(btn);
+          const request = await fetch(`${urlAPI}/${btn.dataset.id}`, {
+            method: "DELETE",
           });
-          const response = await request.json();
-          console.log(response) ;
-        })
-      );
+        });
+      });
     }, 100);
   } catch (error) {
     console.log(error + " delete post");
   }
 }
-
 deletePost();
