@@ -1,6 +1,6 @@
 header {
   position: fixed;
-  top: 120px;
+  top: 119px;
   width: 100%;
   z-index: 990;
   transition: 0.3s all linear;
@@ -293,7 +293,7 @@ header {
                   position: absolute;
                   background-color: $secondary-color;
                   left: 0;
-                  bottom: 15px;
+                  bottom:0;
                   transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
                 }
                 &:hover {
