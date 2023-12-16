@@ -32,24 +32,23 @@
     position: relative;
     z-index: 31;
     @media (min-width: 1000px) {
-      padding-left: 15%;
+      padding-left: 20%;
       min-height: 100%;
       width: 65%;
     }
     &::after {
-      @media (min-width:1000px) {
+      @media (min-width: 1000px) {
         content: "";
-      position: absolute;
-      display: inline-block;
-      right: -100px;
-      top: 0;
-      left: 0;
-      border: 50px solid $primary-color;
-      border-bottom: 20px solid transparent;
-      height: 0;
-      width: 0;
+        position: absolute;
+        display: inline-block;
+        right: -100px;
+        top: 0;
+        left: 0;
+        border: 50px solid $primary-color;
+        border-bottom: 20px solid transparent;
+        height: 0;
+        width: 0;
       }
-      
     }
     .slide_content {
       width: 100%;

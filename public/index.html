@@ -673,8 +673,16 @@
             <div class="col">
               <div class="col_content app_block" style="">
                 <div class="app_image">
-                  <div class="app_phone" style="background-image: url('../public/images/app_phone.webp');"></div>
-                  <div class="app_self" style="background-image: url('images/screen_app.webp');"></div>
+                  <div
+                    class="app_phone"
+                    style="
+                      background-image: url('../public/images/app_phone.webp');
+                    "
+                  ></div>
+                  <div
+                    class="app_self"
+                    style="background-image: url('images/screen_app.webp')"
+                  ></div>
                 </div>
                 <div class="app_b_desc">
                   <b class="app_b"> Yelo App </b>
@@ -684,24 +692,44 @@
                   </p>
                   <ul class="test">
                     <li>
-                      <a href="#" target="_blank" class="store apple ">
-                        <div style="background-image: url('images/apple.svg');">
+                      <a
+                        href="https://apps.apple.com/az/app/yelo/id1515449668"
+                        target="_blank"
+                        class="store apple"
+                      >
+                        <div style="background-image: url('images/apple.svg')">
                           <span>Yukle</span>
                           <p>App Store</p>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <a href="#" target="_blank" class="store google_play">
-                        <div style="background-image: url('images/google\ play.svg');">
+                      <a
+                        href="https://play.google.com/store/apps/details?id=az.yelo.app&hl=ru"
+                        target="_blank"
+                        class="store google_play"
+                      >
+                        <div
+                          style="
+                            background-image: url('images/google\ play.svg');
+                          "
+                        >
                           <span>Yukle</span>
                           <p>Google Play</p>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <a href="#" target="_blank" class="store huawei_play">
-                        <div style="background-image: url('images/huawei_play.svg');">
+                      <a
+                        href="https://appgallery.huawei.com/#/app/C104500649"
+                        target="_blank"
+                        class="store huawei_play"
+                      >
+                        <div
+                          style="
+                            background-image: url('images/huawei_play.svg');
+                          "
+                        >
                           <span>Yukle</span>
                           <p>AppGalerry</p>
                         </div>
@@ -711,9 +739,79 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="col">
-
-            </div> -->
+            <div class="col">
+              <div class="col_content exchange_rate">
+                <div class="cc_title">
+                  <b>Valyuta Mezennesi</b>
+                  <div class="change_rates">
+                    <a class="active_lang" href="javascript:void(0)">Nagd</a>
+                    <div class="select_box">
+                      <div class="select_content">
+                        <ul>
+                          <li>
+                            <a class="active" href="#" data-cash="1">Nagd</a>
+                          </li>
+                          <li>
+                            <a href="#" data-cash="0">Nagdsiz</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="calculator">
+                  <div class="c_line">
+                    <input
+                      type="text"
+                      class="c_int input_value only_number"
+                      placeholder="Satiram"
+                    />
+                    <select name="" id="" class="s_curr">
+                      <option value="azn" selected>AZN</option>
+                      <option value="usd">USD</option>
+                      <option value="eur">EUR</option>
+                    </select>
+                  </div>
+                  <div class="c_line">
+                    <div class="c_int input_result">Aliram</div>
+                    <select class="s_curr">
+                      <option value="azn">AZN</option>
+                      <option value="usd" selected>USD</option>
+                      <option value="eur">EUR</option>
+                    </select>
+                  </div>
+                  <div class="c_result">
+                    <div class="cr_item">
+                      <p>Valyuta</p>
+                      <b class="cr_item_curr table_rate" data-curr="usd">USD</b>
+                      <b class="cr_item_curr table_rate" data-curr="eur">EUR</b>
+                    </div>
+                    <div class="cr_item">
+                      <p>Alis</p>
+                      <b class="cr_item_curr table_rate" data-curr="usd"
+                        >1.6900</b
+                      >
+                      <b class="cr_item_curr table_rate" data-curr="eur"
+                        >1.8200</b
+                      >
+                    </div>
+                    <div class="cr_item">
+                      <p>Satis</p>
+                      <b class="cr_item_curr table_rate" data-curr="usd"
+                        >1.7010</b
+                      >
+                      <b class="cr_item_curr table_rate" data-curr="eur"
+                        >1.8750</b
+                      >
+                    </div>
+                  </div>
+                </div>
+                <p class="info_p">
+                  Region filiallarinda mezenneler ferqli ola biler
+                </p>
+                <a href="#" class="all_exchanges">Butun mezenneler</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -725,11 +823,8 @@
               <b>Son Xeberler</b>
             </div>
           </div>
-
-          <!-- <div class="blogs_content  d-flex flex-wrap  ">
-            
+          <!-- <div class="blogs_content  ">
           </div> -->
-
           <div class="news_link">
             <a
               href="blogs.html"
@@ -738,13 +833,242 @@
               >Butun Xeberler</a
             >
           </div>
-
-          <button onclick="addPosts()">add to server</button>
+          <!-- <button onclick="addPosts()">add to server</button> -->
         </div>
       </section>
-
-      
     </main>
+
+    <footer>
+      <div class="container">
+        <nav class="foot_nav">
+          <section>
+            <h3>Ferdi</h3>
+            <ul>
+              <li>
+                <a href="#">Kreditler</a>
+              </li>
+              <li>
+                <a href="#">Kartlar</a>
+              </li>
+              <li>
+                <a href="#">Emanetler</a>
+              </li>
+              <li>
+                <a href="#">Pul kocurmeleri</a>
+              </li>
+              <li>
+                <a href="#">Kart Xidmetleri</a>
+              </li>
+              <li>
+                <a href="#">Tarifler</a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Biznes</h3>
+            <ul>
+              <li>
+                <a href="#">Biznes Kreditleri</a>
+              </li>
+              <li>
+                <a href="#">Kartlar</a>
+              </li>
+              <li>
+                <a href="#">Biznes Xidmetleri</a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Bank haqqinda</h3>
+            <ul>
+              <li>
+                <a href="#">Rehberlik</a>
+              </li>
+              <li>
+                <a href="#">Karyera</a>
+              </li>
+              <li>
+                <a href="#">Hesabatlar</a>
+              </li>
+              <li>
+                <a href="#">Komiteler</a>
+              </li>
+              <li>
+                <a href="#">Senedler</a>
+              </li>
+              <li>
+                <a href="#">Xeberler</a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Ferdi</h3>
+            <ul>
+              <li>
+                <a href="#">Online kredit sifarisi</a>
+              </li>
+              <li>
+                <a href="#">Kart sifarisi</a>
+              </li>
+              <li>
+                <a href="#">Online kredit odenisi</a>
+              </li>
+              <li>
+                <a href="#">Onlayn odeme</a>
+              </li>
+              <li>
+                <a href="#">Onlayn novbe</a>
+              </li>
+              <li>
+                <a href="#">EDV geri al</a>
+              </li>
+              <li>
+                <a href="#">ASAN pay</a>
+              </li>
+            </ul>
+          </section>
+        </nav>
+        <div class="foot_top">
+          <ul class="social">
+            <li>
+              <a
+                href="#"
+                class="f"
+                style="background-image: url(./images/facebook.svg)"
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="f"
+                style="background-image: url(./images/insta.svg)"
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="f"
+                style="background-image: url(./images/linkedin.svg)"
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="f"
+                style="background-image: url(./images/youtube.svg)"
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="f"
+                style="background-image: url(./images/twitter.svg)"
+              ></a>
+            </li>
+          </ul>
+          <div class="app_b_desc show_mobile">
+            <ul class="test">
+              <li>
+                <a
+                  href="https://apps.apple.com/az/app/yelo/id1515449668"
+                  target="_blank"
+                  class="store apple"
+                >
+                  <div style="background-image: url('images/apple.svg')">
+                    <span>Yukle</span>
+                    <p>App Store</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://play.google.com/store/apps/details?id=az.yelo.app&hl=ru"
+                  target="_blank"
+                  class="store google_play"
+                >
+                  <div style="background-image: url('images/google\ play.svg')">
+                    <span>Yukle</span>
+                    <p>Google Play</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://appgallery.huawei.com/#/app/C104500649"
+                  target="_blank"
+                  class="store huawei_play"
+                >
+                  <div style="background-image: url('images/huawei_play.svg')">
+                    <span>Yukle</span>
+                    <p>AppGalerry</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="contact_inf">
+            <div class="ci_item">
+              <p>Bizi tap</p>
+              <strong>
+                <a href="#" target="_blank"> Həsən bəy Zərdabi pros. 81k </a>
+              </strong>
+            </div>
+            <div class="ci_item">
+              <p>Elaqe nomresi</p>
+              <strong>
+                <a href="tel:981" target="_blank"> 981 </a>
+              </strong>
+            </div>
+            <div class="ci_item">
+              <p>Bize yazin</p>
+              <strong>
+                <a href="#" target="_blank"> bank@yelo.az </a>
+              </strong>
+            </div>
+          </div>
+        </div>
+        <div class="foot_bottom">
+          <a href="#" class="logo" style="background-image: url(images/logo.svg);"></a>
+          <ul>
+            <li>
+              <p>
+                © 2023 Yelo Bank | AR MB tərəfindən 25 fevral 1994-cü il
+                tarixində verilmiş 203 saylı lisenziya
+              </p>
+            </li>
+            <li>
+              <a href="#">
+                E-portal
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                ADIF
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                infobank.az
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Qarabag Dircelis Fondu
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Yasat fondu
+              </a>
+            </li>
+          </ul>
+          <div class="by_omar">
+            <p>Site by</p>
+            <a href="https://www.linkedin.com/in/omar-amircanov-331026244/" target="_blank">Omar Amircanov</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Bootstrap -->
     <!-- <script

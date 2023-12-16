@@ -22,6 +22,12 @@ body {
   padding: 0;
 }
 
+input{
+  outline: none;
+  appearance: none;
+  border: none;
+}
+
 a{
   cursor: pointer;
   white-space: nowrap;

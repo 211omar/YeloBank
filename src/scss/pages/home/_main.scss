@@ -466,7 +466,8 @@ input[type="range"] {
   bottom: 0;
   outline: none;
   @media (min-width: 1000px) {
-    background-color: transparent;
+    background-color: $primary-color;
+    height: 2px;
   }
 }
 
@@ -480,6 +481,9 @@ input[type="range"]::-moz-range-thumb {
   height: 1.2rem;
   width: 1.2rem;
   border-radius: 50%;
+  @media (min-width:1000px) {
+    
+  }
 }
 
 .lc_item {
@@ -504,7 +508,7 @@ input[type="range"]::-moz-range-thumb {
   .container {
     .block_title {
       .block_heading {
-        @media (min-width:1000px) {
+        @media (min-width: 1000px) {
           padding: 0px 15px;
         }
         b {
@@ -616,20 +620,142 @@ input[type="range"]::-moz-range-thumb {
         b {
           padding: 7px 0px;
           font-size: $font-size-lg;
-          @media (min-width:1000px) {
-          font-size: $font-size-xxlg;
-
+          @media (min-width: 1000px) {
+            font-size: $font-size-xxlg;
           }
         }
       }
     }
     .block_content {
       display: block;
+      @media (min-width:1000px) {
+        @include flexible();
+      }
       .col {
-        @media (min-width: 1000px) {
-          width: 66.66% !important;
-          padding: 0 15px;
+        &:first-child {
+          @media (min-width: 1000px) {
+            width: 66.66% !important;
+            padding: 0 15px;
+          }
         }
+        &:last-child {
+          margin: 0;
+          @media (min-width: 1000px) {
+            width: 32.33% !important;
+            padding: 0 15px;
+          }
+          .exchange_rate {
+            padding: 20px;
+          }
+          .cc_title {
+            @include flexible($jc: space-between);
+            b {
+              font-size: $font-size-xl;
+            }
+            .change_rates {
+              position: relative;
+              padding-top: 5px;
+              a {
+                display: none;
+              }
+              .active_lang {
+                color: rgba(0, 0, 0, 0.5);
+                background: url("../../../../public/images/activeLang.svg")
+                  no-repeat right center;
+                padding: 5px 15px 0 0;
+              }
+              .select_box {
+                transform-origin: right top;
+                position: absolute;
+                left: auto;
+                right: 0;
+                top: 0;
+                transform: scale(0);
+                opacity: 0;
+                transition: all 0.2s cubic-bezier(1, 0, 0, 1);
+                visibility: hidden;
+                border-radius: 5px;
+                padding: 10px 0;
+                background: #ffffff;
+                box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.17);
+                text-align: left;
+                z-index: 9;
+                li{
+                  padding: 0;margin: 0;display: block;
+                  a{
+                    padding: 0px 20px;
+                    display: block;white-space: nowrap;
+                    &.active{
+                      color: $secondary-color;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .calculator{
+            .c_line{
+              @include flexible($jc:space-between,);
+              border-bottom: 3px solid $primary-color;
+              padding-top: 10px;
+              .c_int{
+                font-size: calc($font-size-xxlg - 5px);
+                width: 100%;
+                height: 40px;
+                outline: none;
+              }
+              .s_curr{
+                
+                background-color: transparent;
+                border: none;
+                font-weight: 600;
+              }
+            }
+            .c_result{
+              @include flexible($jc:space-between);
+              margin-top: 25px;
+              .cr_item{
+                width: 33.3333%;
+                p{
+                  font-size: $font-size-md;
+                  color: rgba(0, 0, 0, 0.5);
+                }
+                b{
+                  font-size: $font-size-md;
+                  font-weight: 500;
+                  display: block;
+                }
+
+              }
+            }
+          
+          }
+          .info_p{
+            padding: 15px 0px 0px;
+            color: rgba(0, 0, 0, 0.9);
+            font-size: $font-size-sm;
+          }
+          .all_exchanges{
+            background-color: red;
+            margin: 25px -20px -20px;
+            border-top: 1px solid #ECECEC;
+            display: block;
+            padding: 17px 30px;
+            transition: all .2s cubic-bezier(.52,.01,.16,1);
+            background: url(../../../../public/images/blueright.svg) no-repeat 91% 21px;
+            @media (min-width:1000px) {
+              margin: 15px -20px -20px;
+              
+            }
+            &:hover{
+              background-color: $additional-blue;
+              color: $additional-white;
+
+            background-image: url(../../../../public/images/whiteright.svg);
+            }
+          }
+        }
+
         .col_content {
           border-radius: 10px;
           border: 1px solid #ececec;
@@ -649,7 +775,6 @@ input[type="range"]::-moz-range-thumb {
               position: relative;
             }
           }
-
           .app_image {
             width: 100%;
             bottom: 0px;
@@ -707,7 +832,7 @@ input[type="range"]::-moz-range-thumb {
                 width: 250px;
                 height: 375px;
                 left: 150px;
-                top: 80px;
+                top: 75px;
               }
             }
           }
