@@ -85,16 +85,6 @@ menuToggle.addEventListener("click", () => {
   headCore.classList.toggle("");
 });
 
-//slider
-
-const dot = document.querySelectorAll(".dot");
-dot.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    e.target.classList.add("is-selected");
-    document.querySelector(".is-selected").classList.toggle("is-selected");
-  });
-});
-
 //carousel
 
 // const slideItem = document.querySelectorAll(".s_item");
@@ -110,6 +100,13 @@ dot.forEach((item) => {
 //   });
 
 // });
+
+
+
+/*CALCULATOR INPUTS */
+
+const inputs = document.querySelectorAll('.range_result')
+console.log(inputs);
 
 /*BLOGS*/
 

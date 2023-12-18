@@ -123,18 +123,18 @@
                   >Internet Bank</span
                 >
               </a>
-              <a
+              <!-- <a
                 href="#"
                 class="menu-toggle"
                 style="background-image: url(images/menu.svg)"
-              ></a>
+              ></a> -->
             </div>
           </div>
         </div>
-        <div class="head_adds">
+        <!-- <div class="head_adds">
           <div class="container sub_menu_wrap">
             <div class="menu_left">
-              <!-- mobile adds -->
+              mobile adds
               <div class="menu_adds mob_only">
                 <ul>
                   <li class="tm_8819">
@@ -324,7 +324,7 @@
             >
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
     </header>
     <main>
@@ -332,11 +332,12 @@
         <div class="container">
           <div class="block_title">
             <div class="block_heading">
-              <b>Son Xeberler</b>
+              <b> Xeberler</b>
             </div>
           </div>
 
           <div class="news_link">
+            <button style="background-image: url('images/blueright.svg')" class="addPostModal">Add post to server</button>
             <a
               href="#"
               class="all_news"
@@ -345,21 +346,23 @@
             >
           </div>
 
-          <button class="addPostModal">Add post to server</button>
         </div>
       </section>
     </main>
     <div class="post-modal closed">
       <div class="modal-inner close">
-        <h2>ADD YOUR POST</h2>
-        <label for="">Add title:</label>
-        <input
-          type="text"
-          name=""
-          value="as"
-          id="add_title"
-          class="add-title"
-        />
+        <h2>ADD NEW POST</h2>
+        <form action="" class="modal_form">
+          <label for="">Add title:</label>
+          <input
+            type="text"
+            name=""
+            value="as"
+            id="add_title"
+            class="add-title"
+          />
+        </form>
+        
         <button type="button" onclick="addPosts()">Add Post</button>
         <span class="close_modal">X</span>
       </div>
