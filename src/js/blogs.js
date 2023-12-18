@@ -61,13 +61,13 @@ async function addPosts() {
 }
 
 /*get posts */
-let x = 3;
+// let x = 3;
 async function getPost() {
   try {
     const request = await fetch(urlAPI);
     const res = await request.json();
     let content = "";
-    res.slice(`0,${x}`).forEach((item) => {
+    res.forEach((item) => {
       content = `
       <div class="blog  ">
       <div class="col_content ">
@@ -102,16 +102,14 @@ async function deletePost() {
   try {
     setTimeout(() => {
       const deleteBtn = document.querySelectorAll(".delete_button");
-
       deleteBtn.forEach((btn) => {
         btn.addEventListener("click", async function () {
-          console.log(btn);
           const request = await fetch(`${urlAPI}/${btn.dataset.id}`, {
             method: "DELETE",
           });
         });
       });
-    }, 100);
+    }, 2000);
   } catch (error) {
     console.log(error + " delete post");
   }

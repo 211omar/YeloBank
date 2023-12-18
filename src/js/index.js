@@ -27,6 +27,10 @@ const topMenu = document.querySelector(".head-top");
 const headBottom = document.querySelector(".head-bottom");
 const menuToggle = document.querySelector(".menu-toggle");
 
+if(window.screenTop > 0){
+  topMenu.style.display = 'none'
+}
+
 window.addEventListener("scroll", () => {
   let scrolled = window.scrollY;
   if (scrolled > 0) {
@@ -101,12 +105,20 @@ menuToggle.addEventListener("click", () => {
 
 // });
 
-
-
 /*CALCULATOR INPUTS */
 
-const inputs = document.querySelectorAll('.range_result')
-console.log(inputs);
+
+let moneyValue = document.getElementById('money')
+let timeValue = document.getElementById('timee')
+let percentageValue = document.getElementById('percentage')
+
+function renderer(val,id) {
+  document.getElementById(id).value= val
+}
+
+/* CURRENCY */
+
+
 
 /*BLOGS*/
 

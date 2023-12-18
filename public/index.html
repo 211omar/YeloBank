@@ -591,9 +591,10 @@
                       <p>Mebleg</p>
                       <input
                         type="number"
-                        readonly
+                        
                         value="25000"
-                        class="range_result"
+                        class="range_result "
+                        id="money"
                       />
                       <div class="lc_c">AZN</div>
 
@@ -604,19 +605,22 @@
                         max="50000"
                         step="100"
                         value="25000"
+                        onchange="renderer(this.value,'money')"
                       />
                     </div>
+
                     <div class="lc_term lc_item">
                       <p>Muddet</p>
                       <input
                         type="number"
-                        readonly
-                        class="range_result"
+                        
+                        class="range_result "
                         date-max="59"
                         value="12"
+                        id="timee"
                       />
                       <div class="lc_c">ay</div>
-                      
+
                       <input
                         type="range"
                         class="range"
@@ -624,15 +628,19 @@
                         max="59"
                         step="1"
                         value="12"
+                        onchange="renderer(this.value,'timee')"
+
                       />
                     </div>
+
                     <div class="lc_term lc_item lc_percent_for">
                       <p>Illik faiz derecesi</p>
                       <input
-                        readonly
+                        
                         type="text"
-                        class="range_result"
+                        class="range_result "
                         value="9.9"
+                        id="percentage"
                       />
                       <div class="lc_c">%</div>
                       <input
@@ -642,6 +650,8 @@
                         max="20"
                         step="0.1"
                         value="9.9"
+                        onchange="renderer(this.value,'percentage')"
+
                       />
                     </div>
                   </div>
@@ -767,6 +777,7 @@
                       type="text"
                       class="c_int input_value only_number"
                       placeholder="Satiram"
+                      id="sell"
                     />
                     <select name="" id="" class="s_curr">
                       <option value="azn" selected>AZN</option>
@@ -775,7 +786,7 @@
                     </select>
                   </div>
                   <div class="c_line">
-                    <div class="c_int input_result">Aliram</div>
+                    <div class="c_int input_result" id="buy">Aliram</div>
                     <select class="s_curr">
                       <option value="azn">AZN</option>
                       <option value="usd" selected>USD</option>
@@ -1030,7 +1041,11 @@
           </div>
         </div>
         <div class="foot_bottom">
-          <a href="#" class="logo" style="background-image: url(images/logo.svg);"></a>
+          <a
+            href="#"
+            class="logo"
+            style="background-image: url(images/logo.svg)"
+          ></a>
           <ul>
             <li>
               <p>
@@ -1039,34 +1054,28 @@
               </p>
             </li>
             <li>
-              <a href="#">
-                E-portal
-              </a>
+              <a href="#"> E-portal </a>
             </li>
             <li>
-              <a href="#">
-                ADIF
-              </a>
+              <a href="#"> ADIF </a>
             </li>
             <li>
-              <a href="#">
-                infobank.az
-              </a>
+              <a href="#"> infobank.az </a>
             </li>
             <li>
-              <a href="#">
-                Qarabag Dircelis Fondu
-              </a>
+              <a href="#"> Qarabag Dircelis Fondu </a>
             </li>
             <li>
-              <a href="#">
-                Yasat fondu
-              </a>
+              <a href="#"> Yasat fondu </a>
             </li>
           </ul>
           <div class="by_omar">
             <p>Site by</p>
-            <a href="https://www.linkedin.com/in/omar-amircanov-331026244/" target="_blank">Omar Amircanov</a>
+            <a
+              href="https://www.linkedin.com/in/omar-amircanov-331026244/"
+              target="_blank"
+              >Omar Amircanov</a
+            >
           </div>
         </div>
       </div>
