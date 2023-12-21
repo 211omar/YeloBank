@@ -118,15 +118,15 @@ function renderer(val,id) {
  
 const calculateLoan = () => {
   let amount = document.getElementById("money").value;
-  let interest = document.getElementById("timee").value;
-  let months = document.getElementById("percentage").value;
+  let interest = document.getElementById("percentage").value;
+  let months = document.getElementById("timee").value;
   
   let monthlyPayment = ((amount / months) + interest);
-  let totalInterest = (amount * (interest * 0.01)) / months;
-  let totalPayment = parseFloat(amount) + parseFloat(totalInterest);
+  // let totalInterest = (amount * (interest * 0.01)) / months;
+  // let totalPayment = parseFloat(amount) + parseFloat(totalInterest);
   
   document.getElementById("my_month_pay").innerHTML = `
-                 ${parseFloat(monthlyPayment).toFixed(2)}
+                 ${parseFloat(monthlyPayment).toFixed(0) }AZN
                  ` 
 }
 
@@ -139,18 +139,15 @@ const urlAPI = "http://localhost:1992/data";
 
 // const blogContent = document.querySelector(".blogs_content");
 
-const blogsContainer = document.querySelector(
-  ".blogs .container .block_title "
-);
+
 const blogContent = document.createElement("div");
 blogContent.classList.add("blogs_content");
 blogContent.classList.add("d-flex");
 blogContent.classList.add("flex-wrap");
-
+const blogsContainer = document.querySelector(".blogs .container .block_title ");
 blogsContainer.after(blogContent);
 
 const newdate = new Date();
-
 const date1 = newdate.toISOString();
 
 async function addPosts() {
@@ -175,6 +172,8 @@ async function addPosts() {
   }
 }
 
+
+
 async function getPost() {
   try {
     const request = await fetch(urlAPI);
@@ -196,7 +195,7 @@ async function getPost() {
         </div>
     </div>
       `;
-      blogContent.innerHTML += content;
+      blogContent.innerHTML += content;   
     });
 
     if (!res.ok) {

@@ -594,6 +594,8 @@
                         value="25000"
                         class="range_result "
                         id="money"
+                        onchange="renderer(this.value,'moneyRange'),calculateLoan()"
+
                       />
                       <div class="lc_c">AZN</div>
 
@@ -604,6 +606,7 @@
                         max="50000"
                         step="100"
                         value="25000"
+                        id="moneyRange"
                         onchange="renderer(this.value,'money'),calculateLoan()"
                       />
 
@@ -618,6 +621,8 @@
                         date-max="59"
                         value="12"
                         id="timee"
+                        onchange="renderer(this.value,'timeRange'),calculateLoan()"
+
                       />
                       <div class="lc_c">ay</div>
 
@@ -628,6 +633,7 @@
                         max="59"
                         step="1"
                         value="12"
+                        id="timeRange"
                         onchange="renderer(this.value,'timee'),calculateLoan()"
 
                       />
@@ -640,6 +646,8 @@
                         class="range_result "
                         value="9.9"
                         id="percentage"
+                        onchange="renderer(this.value,'percentRange'),calculateLoan()"
+
                       />
                       <div class="lc_c">%</div>
                       <input
@@ -650,7 +658,7 @@
                         step="0.1"
                         value="9.9"
                         onchange="renderer(this.value,'percentage'),calculateLoan()"
-
+                      id="percentRange"
                       />
                     </div>
                   </div>
@@ -1109,6 +1117,6 @@
         },
       });
     </script>
-    <script src="../src/js/index.js"></script>
+    <script src="../src/js/index.js"></script>o
   </body>
 </html>
