@@ -13,12 +13,12 @@ const date1 = newdate.toISOString();
 
 /*more blogs (slice)*/
 
-const moreBlogs = document.querySelector(".all_news");
-moreBlogs.addEventListener("click", () => {
-  console.log("all news clicked")
-  x++
-  console.log(x);
-});
+// const moreBlogs = document.querySelector(".all_news");
+// moreBlogs.addEventListener("click", () => {
+//   console.log("all news clicked")
+//   x++
+//   console.log(x);
+// });
 
 /*modal */
 const closeModal = document.querySelector('.close_modal')
@@ -101,7 +101,8 @@ getPost();
 async function deletePost() {
   try {
     setTimeout(() => {
-      const deleteBtn = document.querySelectorAll(".delete_button");
+      const deleteBtn = document.querySelectorAll(".delete_button")
+      console.log(deleteBtn);
       deleteBtn.forEach((btn) => {
         btn.addEventListener("click", async function () {
           const request = await fetch(`${urlAPI}/${btn.dataset.id}`, {
@@ -109,7 +110,7 @@ async function deletePost() {
           });
         });
       });
-    }, 2000);
+    }, 3000);
   } catch (error) {
     console.log(error + " delete post");
   }

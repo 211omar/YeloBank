@@ -108,15 +108,28 @@ menuToggle.addEventListener("click", () => {
 /*CALCULATOR INPUTS */
 
 
-let moneyValue = document.getElementById('money')
-let timeValue = document.getElementById('timee')
-let percentageValue = document.getElementById('percentage')
+
 
 function renderer(val,id) {
   document.getElementById(id).value= val
 }
 
-/* CURRENCY */
+/*LOAN CALCULATOR */
+ 
+const calculateLoan = () => {
+  let amount = document.getElementById("money").value;
+  let interest = document.getElementById("timee").value;
+  let months = document.getElementById("percentage").value;
+  
+  let monthlyPayment = ((amount / months) + interest);
+  let totalInterest = (amount * (interest * 0.01)) / months;
+  let totalPayment = parseFloat(amount) + parseFloat(totalInterest);
+  
+  document.getElementById("my_month_pay").innerHTML = `
+                 ${parseFloat(monthlyPayment).toFixed(2)}
+                 ` 
+}
+
 
 
 
@@ -194,3 +207,7 @@ async function getPost() {
   }
 }
 getPost();
+
+
+
+
