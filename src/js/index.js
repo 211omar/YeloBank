@@ -1,17 +1,32 @@
-/*  BANNER */
-
 const close_btn = document.querySelector(".close");
 const mobile_top = document.querySelector(".mobile-top");
 const header = document.querySelector("header");
 let closeBtnSessionStorage = sessionStorage.getItem("closed");
 const main = document.querySelector("main");
+const headLinks = document.querySelectorAll(".alink");
+const oBank = document.querySelector(".o_banking");
+const topMenu = document.querySelector(".head-top");
+const headBottom = document.querySelector(".head-bottom");
+const menuToggle = document.querySelector(".menu-toggle");
+const openBox = document.querySelector(".open_select");
+const selectBox = document.querySelector(".select_box");
+const closeSelect = document.querySelector(".close_selectbox");
+const adds = document.querySelector(".head_adds");
+const mob_nav_menu = document.querySelector("nav");
+const headCore = document.querySelector(".head-core");
+const blogContent = document.createElement("div");
+const blogsContainer = document.querySelector(".blogs .container .block_title ");
+const newdate = new Date();
+const date1 = newdate.toISOString();
+const urlAPI = "http://localhost:1992/data";
+
+
 function hideTop() {
   mobile_top.classList.add("hidden");
   header.classList.add("top0");
   sessionStorage.setItem("closed", "true");
   main.style.paddingTop = "0px";
 }
-
 close_btn.addEventListener("click", hideTop);
 
 if (closeBtnSessionStorage) {
@@ -21,16 +36,9 @@ if (closeBtnSessionStorage) {
 /*HEADER*/
 
 //topnav
-const headLinks = document.querySelectorAll(".alink");
-const oBank = document.querySelector(".o_banking");
-const topMenu = document.querySelector(".head-top");
-const headBottom = document.querySelector(".head-bottom");
-const menuToggle = document.querySelector(".menu-toggle");
-
 if(window.screenTop > 0){
   topMenu.style.display = 'none'
 }
-
 window.addEventListener("scroll", () => {
   let scrolled = window.scrollY;
   if (scrolled > 0) {
@@ -45,7 +53,6 @@ window.addEventListener("scroll", () => {
     menuToggle.classList.remove("smaller");
   }
 });
-
 headLinks.forEach((item) => {
   item.addEventListener("click", (e) => {
     document.querySelector(".top-li > .active").classList.toggle("active");
@@ -54,11 +61,6 @@ headLinks.forEach((item) => {
 });
 
 //selectbox
-
-const openBox = document.querySelector(".open_select");
-const selectBox = document.querySelector(".select_box");
-const closeSelect = document.querySelector(".close_selectbox");
-
 openBox.addEventListener("click", () => {
   selectBox.classList.add("open");
   console.log(selectBox.classList);
@@ -77,10 +79,6 @@ closeSelect.addEventListener("click", () => {
 
 // navbar
 
-const adds = document.querySelector(".head_adds");
-const mob_nav_menu = document.querySelector("nav");
-const headCore = document.querySelector(".head-core");
-
 menuToggle.addEventListener("click", () => {
   menuToggle.classList.toggle("bimg");
   headBottom.classList.toggle("white-bg");
@@ -89,6 +87,7 @@ menuToggle.addEventListener("click", () => {
   headCore.classList.toggle("");
 });
 
+/*MAIN */
 //carousel
 
 // const slideItem = document.querySelectorAll(".s_item");
@@ -106,16 +105,11 @@ menuToggle.addEventListener("click", () => {
 // });
 
 /*CALCULATOR INPUTS */
-
-
-
-
 function renderer(val,id) {
   document.getElementById(id).value= val
 }
 
 /*LOAN CALCULATOR */
- 
 const calculateLoan = () => {
   let amount = document.getElementById("money").value;
   let interest = document.getElementById("percentage").value;
@@ -131,25 +125,14 @@ const calculateLoan = () => {
 }
 
 
-
-
 /*BLOGS*/
-
-const urlAPI = "http://localhost:1992/data";
-
-// const blogContent = document.querySelector(".blogs_content");
-
-
-const blogContent = document.createElement("div");
 blogContent.classList.add("blogs_content");
 blogContent.classList.add("d-flex");
 blogContent.classList.add("flex-wrap");
-const blogsContainer = document.querySelector(".blogs .container .block_title ");
 blogsContainer.after(blogContent);
 
-const newdate = new Date();
-const date1 = newdate.toISOString();
 
+/*ADD POSTS */
 async function addPosts() {
   try {
     const request = await fetch(urlAPI, {
@@ -172,8 +155,7 @@ async function addPosts() {
   }
 }
 
-
-
+/*GET POSTS */
 async function getPost() {
   try {
     const request = await fetch(urlAPI);
