@@ -109,18 +109,25 @@ function renderer(val,id) {
   document.getElementById(id).value= val
 }
 
+
 /*LOAN CALCULATOR */
 const calculateLoan = () => {
+ 
   let amount = document.getElementById("money").value;
   let interest = document.getElementById("percentage").value;
   let months = document.getElementById("timee").value;
+  let numAmount = Number(amount)
+  let numInterest =Number(interest)
+  let numMonth =Number(months)
+
+  let monthlyPayment = (((numAmount / 100) * numInterest) + numAmount);
   
-  let monthlyPayment = ((amount / months) + interest);
+  let sum2 = monthlyPayment/ numMonth
   // let totalInterest = (amount * (interest * 0.01)) / months;
   // let totalPayment = parseFloat(amount) + parseFloat(totalInterest);
   
   document.getElementById("my_month_pay").innerHTML = `
-                 ${parseFloat(monthlyPayment).toFixed(0) }AZN
+                 ${parseFloat(sum2).toFixed(0) }AZN
                  ` 
 }
 
