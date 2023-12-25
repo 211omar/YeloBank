@@ -64,11 +64,22 @@
       "title": "20dekabr",
       "date": "2023-12-20T12:34:39.105Z",
       "id": 19
+    },
+    {
+      "title": "lalalalallalala",
+      "date": "2023-12-25T13:19:55.350Z",
+      "id": 21
+    },
+    {
+      "title": "lalalalallalala",
+      "date": "2023-12-25T13:19:55.350Z",
+      "id": 22
     }
   ],
   "currency": [
     {
-      "USD": 1.74
+      "USD": 1.7,
+      "EUR": 1.87
     }
   ]
 }

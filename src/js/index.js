@@ -15,11 +15,12 @@ const adds = document.querySelector(".head_adds");
 const mob_nav_menu = document.querySelector("nav");
 const headCore = document.querySelector(".head-core");
 const blogContent = document.createElement("div");
-const blogsContainer = document.querySelector(".blogs .container .block_title ");
+const blogsContainer = document.querySelector(
+  ".blogs .container .block_title "
+);
 const newdate = new Date();
 const date1 = newdate.toISOString();
 const urlAPI = "http://localhost:1992/data";
-
 
 function hideTop() {
   mobile_top.classList.add("hidden");
@@ -36,8 +37,8 @@ if (closeBtnSessionStorage) {
 /*HEADER*/
 
 //topnav
-if(window.screenTop > 0){
-  topMenu.style.display = 'none'
+if (window.screenTop > 0) {
+  topMenu.style.display = "none";
 }
 window.addEventListener("scroll", () => {
   let scrolled = window.scrollY;
@@ -105,32 +106,53 @@ menuToggle.addEventListener("click", () => {
 // });
 
 /*CALCULATOR INPUTS */
-function renderer(val,id) {
-  document.getElementById(id).value= val
+function renderer(val, id) {
+  document.getElementById(id).value = val;
 }
-
 
 /*LOAN CALCULATOR */
 const calculateLoan = () => {
- 
   let amount = document.getElementById("money").value;
   let interest = document.getElementById("percentage").value;
   let months = document.getElementById("timee").value;
-  let numAmount = Number(amount)
-  let numInterest =Number(interest)
-  let numMonth =Number(months)
+  let numAmount = Number(amount);
+  let numInterest = Number(interest);
+  let numMonth = Number(months);
 
-  let monthlyPayment = (((numAmount / 100) * numInterest) + numAmount);
-  
-  let sum2 = monthlyPayment/ numMonth
+  let monthlyPayment = (numAmount / 100) * numInterest + numAmount;
+
+  let sum2 = monthlyPayment / numMonth;
   // let totalInterest = (amount * (interest * 0.01)) / months;
   // let totalPayment = parseFloat(amount) + parseFloat(totalInterest);
-  
-  document.getElementById("my_month_pay").innerHTML = `
-                 ${parseFloat(sum2).toFixed(0) }AZN
-                 ` 
-}
 
+  document.getElementById("my_month_pay").innerHTML = `
+                 ${parseFloat(sum2).toFixed(0)}AZN
+                 `;
+};
+
+/*CURRENCY EXCHANGE */
+
+const urlExchange = "http://localhost:1992/currency";
+const sell = document.getElementById("sell");
+sell.addEventListener("keyup", () => {
+  console.log(44);
+  const buyValue = document.getElementById("buy");
+  const sellValue = Number(sell.value);
+  async function getCurrencies() {
+    const request = await fetch(urlExchange);
+    const response = await request.json();
+    return response;
+  }
+  getCurrencies()
+    .then((data) => data[0])
+    .then((data2) => {
+      buyValue.innerHTML = Number(data2.USD) * sellValue;
+    });
+});
+
+// .then(data3=>{
+//   console.log(data3);
+// })
 
 /*BLOGS*/
 blogContent.classList.add("blogs_content");
@@ -138,29 +160,28 @@ blogContent.classList.add("d-flex");
 blogContent.classList.add("flex-wrap");
 blogsContainer.after(blogContent);
 
+// /*ADD POSTS */
+// async function addPosts() {
+//   try {
+//     const request = await fetch(urlAPI, {
+//       method: "POST",
+//       body: JSON.stringify({
+//         title: "yelobank masallida 3",
+//         date: `${date1}`,
+//       }),
+//       headers: {
+//         "content-type": "application/json",
+//       },
+//     });
+//     const response = request.json();
 
-/*ADD POSTS */
-async function addPosts() {
-  try {
-    const request = await fetch(urlAPI, {
-      method: "POST",
-      body: JSON.stringify({
-        title: "yelobank masallida 3",
-        date: `${date1}`,
-      }),
-      headers: {
-        "content-type": "application/json",
-      },
-    });
-    const response = request.json();
-
-    if (!response.ok) {
-      throw "error";
-    }
-  } catch (error) {
-    alert(error);
-  }
-}
+//     if (!response.ok) {
+//       throw "error";
+//     }
+//   } catch (error) {
+//     alert(error);
+//   }
+// }
 
 /*GET POSTS */
 async function getPost() {
@@ -184,7 +205,7 @@ async function getPost() {
         </div>
     </div>
       `;
-      blogContent.innerHTML += content;   
+      blogContent.innerHTML += content;
     });
 
     if (!res.ok) {
@@ -195,7 +216,3 @@ async function getPost() {
   }
 }
 getPost();
-
-
-
-

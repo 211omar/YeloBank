@@ -1,13 +1,5 @@
 const urlAPI = "http://localhost:1992/data";
 
-
-
-const blogsContainer = document.querySelector(".blogs .container .block_title");
-const blogContent = document.createElement("div");
-blogContent.classList.add("blogs_content");
-blogContent.classList.add("d-flex");
-blogContent.classList.add("flex-wrap");
-blogsContainer.after(blogContent);
 const newdate = new Date();
 const date1 = newdate.toISOString();
 
@@ -21,27 +13,26 @@ const date1 = newdate.toISOString();
 // });
 
 /*modal */
-const closeModal = document.querySelector('.close_modal')
-const modalContainer = document.querySelector('.post-modal')
-const modal = document.querySelector('.modal-inner')
-const addPostModal = document.querySelector('.addPostModal')
-addPostModal.addEventListener('click',()=>{
-  modalContainer.classList.remove('closed')
-  modal.classList.remove('close')
-
-})
-closeModal.addEventListener("click",()=>{
-  modalContainer.classList.add('closed')
-  modal.classList.add('close')
-})
+const closeModal = document.querySelector(".close_modal");
+const modalContainer = document.querySelector(".post-modal");
+const modal = document.querySelector(".modal-inner");
+const addPostModal = document.querySelector(".addPostModal");
+addPostModal.addEventListener("click", () => {
+  modalContainer.classList.remove("closed");
+  modal.classList.remove("close");
+});
+closeModal.addEventListener("click", () => {
+  modalContainer.classList.add("closed");
+  modal.classList.add("close");
+});
 
 /* add posts*/
 
-const titleInput = document.getElementById('add_title')
-const titleValue =titleInput.value
 async function addPosts() {
+  const titleInput = document.getElementById("add_title");
+  const titleValue = titleInput.value;
   try {
-    const request = await fetch(urlAPI, {
+    fetch(urlAPI, {
       method: "POST",
       body: JSON.stringify({
         title: titleValue,
@@ -50,11 +41,11 @@ async function addPosts() {
       headers: {
         "content-type": "application/json",
       },
+    }).then(() => {
+      if (!response.ok) {
+        throw "error oldu";
+      }
     });
-
-    if (!response.ok) {
-      throw "error";
-    }
   } catch (error) {
     alert(error);
   }
@@ -63,6 +54,14 @@ async function addPosts() {
 /*get posts */
 // let x = 3;
 async function getPost() {
+  const blogsContainer = document.querySelector(
+    ".blogs .container .block_title"
+  );
+  const blogContent = document.createElement("div");
+  blogContent.classList.add("blogs_content");
+  blogContent.classList.add("d-flex");
+  blogContent.classList.add("flex-wrap");
+  blogsContainer.after(blogContent);
   try {
     const request = await fetch(urlAPI);
     const res = await request.json();
@@ -87,7 +86,6 @@ async function getPost() {
       `;
       blogContent.innerHTML += content;
     });
-
     if (!res.ok) {
       throw "error";
     }
@@ -98,14 +96,15 @@ async function getPost() {
 getPost();
 
 /*delete post */
+//PROBLEM
 async function deletePost() {
   try {
     setTimeout(() => {
-      const deleteBtn = document.querySelectorAll(".delete_button")
+      const deleteBtn = document.querySelectorAll(".delete_button");
       console.log(deleteBtn);
       deleteBtn.forEach((btn) => {
         btn.addEventListener("click", async function () {
-          const request = await fetch(`${urlAPI}/${btn.dataset.id}`, {
+          fetch(`${urlAPI}/${btn.dataset.id}`, {
             method: "DELETE",
           });
         });
