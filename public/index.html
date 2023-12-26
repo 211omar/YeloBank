@@ -781,25 +781,27 @@
                 </div>
                 <div class="calculator">
                   <div class="c_line">
+
                     <input
                       type="text"
                       class="c_int input_value only_number"
                       placeholder="Satiram"
                       id="sell"
-
                     />
-                    <select name="" id="" class="s_curr">
-                      <option value="azn" selected>AZN</option>
-                      <option value="usd">USD</option>
-                      <option value="eur">EUR</option>
+
+                    <select name="" id="" class="s_curr" id="sell_select">
+                      <option class="currencies_sell" value="azn" selected>AZN</option>
+                      <option class="currencies_sell" value="usd">USD</option>
+                      <option class="currencies_sell" value="eur">EUR</option>
                     </select>
+
                   </div>
                   <div class="c_line">
                     <div class="c_int input_result" id="buy">Aliram</div>
                     <select class="s_curr">
-                      <option value="azn">AZN</option>
-                      <option value="usd" >USD</option>
-                      <option value="eur" >EUR</option>
+                      <option class="currencies_buy" value="azn">AZN</option>
+                      <option class="currencies_buy" value="usd" selected>USD</option>
+                      <option class="currencies_buy" value="eur" >EUR</option>
                     </select>
                   </div>
                   <div class="c_result">

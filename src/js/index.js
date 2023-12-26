@@ -134,9 +134,12 @@ const calculateLoan = () => {
 
 const urlExchange = "http://localhost:1992/currency";
 const sell = document.getElementById("sell");
+const buyValue = document.getElementById("buy");
+
+
 sell.addEventListener("keyup", () => {
-  console.log(44);
-  const buyValue = document.getElementById("buy");
+  const curr_options = document.querySelectorAll(".currencies_sell");
+  const res_options = document.querySelectorAll(".currencies_buy");
   const sellValue = Number(sell.value);
   async function getCurrencies() {
     const request = await fetch(urlExchange);
@@ -146,7 +149,21 @@ sell.addEventListener("keyup", () => {
   getCurrencies()
     .then((data) => data[0])
     .then((data2) => {
-      buyValue.innerHTML = Number(data2.USD) * sellValue;
+      res_options.forEach(val=>{
+        // console.log(val)
+      })
+      curr_options.forEach((op) => {
+       
+        // console.log(op);
+        if (op.value === "azn") {
+          console.log('azn');
+          // buyValue.innerHTML = (sellValue / Number(data2.USD)).toFixed(2);
+        }else if(op.value === "usd"){
+          console.log('usd');
+          // buyValue.innerHTML = (sellValue * Number(data2.USD)).toFixed(2);
+        }
+      });
+      
     });
 });
 
