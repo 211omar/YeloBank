@@ -592,10 +592,9 @@
                       <input
                         type="number"
                         value="25000"
-                        class="range_result "
+                        class="range_result"
                         id="money"
                         onchange="renderer(this.value,'moneyRange'),calculateLoan()"
-
                       />
                       <div class="lc_c">AZN</div>
 
@@ -609,20 +608,17 @@
                         id="moneyRange"
                         onchange="renderer(this.value,'money'),calculateLoan()"
                       />
-
                     </div>
 
                     <div class="lc_term lc_item">
                       <p>Muddet</p>
                       <input
                         type="number"
-                        
-                        class="range_result "
+                        class="range_result"
                         date-max="59"
                         value="12"
                         id="timee"
                         onchange="renderer(this.value,'timeRange'),calculateLoan()"
-
                       />
                       <div class="lc_c">ay</div>
 
@@ -635,7 +631,6 @@
                         value="12"
                         id="timeRange"
                         onchange="renderer(this.value,'timee'),calculateLoan()"
-
                       />
                     </div>
 
@@ -643,11 +638,10 @@
                       <p>Illik faiz derecesi</p>
                       <input
                         type="text"
-                        class="range_result "
+                        class="range_result"
                         value="9.9"
                         id="percentage"
                         onchange="renderer(this.value,'percentRange'),calculateLoan()"
-
                       />
                       <div class="lc_c">%</div>
                       <input
@@ -658,7 +652,7 @@
                         step="0.1"
                         value="9.9"
                         onchange="renderer(this.value,'percentage'),calculateLoan(),some()"
-                      id="percentRange"
+                        id="percentRange"
                       />
                     </div>
                   </div>
@@ -691,7 +685,7 @@
           </div>
           <div class="block_content">
             <div class="col">
-              <div class="col_content app_block" >
+              <div class="col_content app_block">
                 <div class="app_image">
                   <div
                     class="app_phone"
@@ -781,27 +775,32 @@
                 </div>
                 <div class="calculator">
                   <div class="c_line">
-
                     <input
-                      type="text"
+                      type="number"
+                      inputmode="numeric"
+                      pattern="[0-9\s]"
                       class="c_int input_value only_number"
                       placeholder="Satiram"
                       id="sell"
                     />
 
-                    <select name="" id="" class="s_curr" id="sell_select">
-                      <option class="currencies_sell" value="azn" selected>AZN</option>
+                    <select  class="s_curr" id="sell_select">
+                      <option class="currencies_sell" value="azn" id="azn_sell" selected>
+                        AZN
+                      </option>
                       <option class="currencies_sell" value="usd">USD</option>
                       <option class="currencies_sell" value="eur">EUR</option>
                     </select>
-
                   </div>
                   <div class="c_line">
                     <div class="c_int input_result" id="buy">Aliram</div>
-                    <select class="s_curr">
+
+                    <select  class="s_curr" id="buy_select">
                       <option class="currencies_buy" value="azn">AZN</option>
-                      <option class="currencies_buy" value="usd" selected>USD</option>
-                      <option class="currencies_buy" value="eur" >EUR</option>
+                      <option class="currencies_buy" value="usd">USD</option>
+                      <option class="currencies_buy" value="eur" selected>
+                        EUR
+                      </option>
                     </select>
                   </div>
                   <div class="c_result">
@@ -1119,6 +1118,7 @@
         },
       });
     </script>
-    <script src="../src/js/index.js"></script>o
+    <script src="../src/js/index.js"></script>
+    o
   </body>
 </html>

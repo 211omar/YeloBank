@@ -24,84 +24,67 @@
       "title": "Yelo Bank artıq Masallıda!",
       "date": "2023-12-26T14:37:17.403Z",
       "id": 5
-    }
-    ,
+    },
     {
       "title": "Yelo Bank-ın “Yelaw Boot Camp” proqramının iştirakçıları seçildi",
       "date": "2023-12-26T14:37:27.812Z",
       "id": 6
-    }
-    ,
+    },
     {
       "title": "Yelo Bank-ın “Yelaw Boot Camp” proqramının iştirakçıları seçildi",
       "date": "2023-12-26T14:37:27.812Z",
       "id": 7
-    }
-    ,
+    },
     {
       "title": "Yelo Bank-ın “Yelaw Boot Camp” proqramının iştirakçıları seçildi",
       "date": "2023-12-26T14:37:27.812Z",
       "id": 8
-    }
-    ,
+    },
     {
       "title": "Yelo Bank-ın “Yelaw Boot Camp” proqramının iştirakçıları seçildi",
       "date": "2023-12-26T14:37:27.812Z",
       "id": 9
-    }
-    ,
+    },
     {
       "title": "Yelo Bank-ın “Yelaw Boot Camp” proqramının iştirakçıları seçildi",
       "date": "2023-12-26T14:37:27.812Z",
       "id": 10
-    }
-    ,
+    },
     {
       "title": "Yelo Bank-ın “Yelaw Boot Camp” proqramının iştirakçıları seçildi",
       "date": "2023-12-26T14:37:27.812Z",
       "id": 11
-    }
-    ,
+    },
     {
       "title": "Yelo Bank-ın “Yelaw Boot Camp” proqramının iştirakçıları seçildi",
       "date": "2023-12-26T14:37:27.812Z",
       "id": 12
-    }
-    ,
+    },
     {
       "title": "Yelo Bank-ın “Yelaw Boot Camp” proqramının iştirakçıları seçildi",
       "date": "2023-12-26T14:37:27.812Z",
       "id": 13
-    }
-    ,
+    },
     {
       "title": "Yelo Bank-ın “Yelaw Boot Camp” proqramının iştirakçıları seçildi",
       "date": "2023-12-26T14:37:27.812Z",
       "id": 14
-    }
-    ,
+    },
     {
       "title": "Yelo Bank-ın “Yelaw Boot Camp” proqramının iştirakçıları seçildi",
       "date": "2023-12-26T14:37:27.812Z",
       "id": 15
-    }
-    ,
+    },
     {
       "title": "Yelo Bank-ın “Yelaw Boot Camp” proqramının iştirakçıları seçildi",
       "date": "2023-12-26T14:37:27.812Z",
       "id": 16
     }
-    ,
-    {
-      "title": "Yelo Bank-ın “Yelaw Boot Camp” proqramının iştirakçıları seçildi",
-      "date": "2023-12-26T14:37:27.812Z",
-      "id": 17
-    }
   ],
-  "currency": [
-    {
-      "USD": 1.69,
-      "EUR": 1.87
+  "currency": {
+    "rates": {
+      "usd": 1.69,
+      "eur": 1.87
     }
-  ]
+  }
 }

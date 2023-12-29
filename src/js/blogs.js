@@ -86,9 +86,11 @@ async function getPost() {
       `;
       blogContent.innerHTML += content;
     });
+    deletePost();
     if (!res.ok) {
       throw "error";
     }
+    
   } catch (error) {
     console.log(error);
   }
@@ -96,22 +98,19 @@ async function getPost() {
 getPost();
 
 /*delete post */
-//PROBLEM
+
 async function deletePost() {
   try {
-    setTimeout(() => {
-      const deleteBtn = document.querySelectorAll(".delete_button");
-      console.log(deleteBtn);
-      deleteBtn.forEach((btn) => {
-        btn.addEventListener("click", async function () {
-          fetch(`${urlAPI}/${btn.dataset.id}`, {
-            method: "DELETE",
-          });
+    const deleteBtn = document.querySelectorAll(".delete_button");
+    console.log(deleteBtn);
+    deleteBtn.forEach((btn) => {
+      btn.addEventListener("click", async function () {
+        fetch(`${urlAPI}/${btn.dataset.id}`, {
+          method: "DELETE",
         });
       });
-    }, 3000);
+    });
   } catch (error) {
     console.log(error + " delete post");
   }
 }
-deletePost();

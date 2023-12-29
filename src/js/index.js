@@ -89,21 +89,6 @@ menuToggle.addEventListener("click", () => {
 });
 
 /*MAIN */
-//carousel
-
-// const slideItem = document.querySelectorAll(".s_item");
-// window.addEventListener("resize", () => {
-//   let x = window.innerWidth;
-
-//   slideItem.forEach((item) => {
-//     if (x<460) {
-//       item.style.left += `${x/40}`+'%'
-
-//     }
-
-//   });
-
-// });
 
 /*CALCULATOR INPUTS */
 function renderer(val, id) {
@@ -134,42 +119,63 @@ const calculateLoan = () => {
 
 const urlExchange = "http://localhost:1992/currency";
 const sell = document.getElementById("sell");
-const buyValue = document.getElementById("buy");
+const buy = document.getElementById("buy");
+const select1 = document.querySelector("#sell_select");
+const select2 = document.querySelector("#buy_select");
+const option1 = select1.value;
+const option2 = select2.value;
+let removed = null;
 
-
-sell.addEventListener("keyup", () => {
-  const curr_options = document.querySelectorAll(".currencies_sell");
-  const res_options = document.querySelectorAll(".currencies_buy");
+function doCalculation() {
+  const select1 = document.querySelector("#sell_select");
+  const select2 = document.querySelector("#buy_select");
+  const option1 = select1.value;
+  const option2 = select2.value;
   const sellValue = Number(sell.value);
+
+  // function checkDuplicate() {
+  //   const aznSell = document.getElementById("azn_sell");
+
+  //   if (option1 === "azn") {
+  //     let azn = aznSell.value;
+  //     removed = azn;
+  //     select2.remove(azn);
+  //     removed = null;
+  //   } else {
+  //     if (removed) {
+  //       select2.add(removed);
+  //       removed = null;
+  //     }
+  //   }
+  // }
+  // checkDuplicate();
+  
   async function getCurrencies() {
-    const request = await fetch(urlExchange);
+    const request = await fetch(`${urlExchange}`);
     const response = await request.json();
     return response;
   }
-  getCurrencies()
-    .then((data) => data[0])
-    .then((data2) => {
-      res_options.forEach(val=>{
-        // console.log(val)
-      })
-      curr_options.forEach((op) => {
-       
-        // console.log(op);
-        if (op.value === "azn") {
-          console.log('azn');
-          // buyValue.innerHTML = (sellValue / Number(data2.USD)).toFixed(2);
-        }else if(op.value === "usd"){
-          console.log('usd');
-          // buyValue.innerHTML = (sellValue * Number(data2.USD)).toFixed(2);
-        }
-      });
-      
-    });
-});
+  getCurrencies().then((data) => {
+    const rate = data.rates[option2];
+    console.log(rate);
+    const rate2 = data.rates[option1];
 
-// .then(data3=>{
-//   console.log(data3);
-// })
+    // TO AZN
+    if (option1 === "eur" && option2 === "azn") {
+      buy.innerHTML = (sellValue * Number(rate2)).toFixed(2);
+    } else if (option1 === "usd" && option2 === "azn") {
+      buy.innerHTML = (sellValue * Number(rate2)).toFixed(2);
+    }
+
+    //TO USD EUR
+    if (option1 === "azn" && option2 === "eur") {
+      buy.innerHTML = (sellValue / Number(rate)).toFixed(2);
+    } else if (option1 === "azn" && option2 === "usd") {
+      buy.innerHTML = (sellValue / Number(rate)).toFixed(2);
+    }
+  });
+}
+sell.addEventListener("keyup", doCalculation);
 
 /*BLOGS*/
 blogContent.classList.add("blogs_content");
@@ -177,30 +183,7 @@ blogContent.classList.add("d-flex");
 blogContent.classList.add("flex-wrap");
 blogsContainer.after(blogContent);
 
-// /*ADD POSTS */
-// async function addPosts() {
-//   try {
-//     const request = await fetch(urlAPI, {
-//       method: "POST",
-//       body: JSON.stringify({
-//         title: "yelobank masallida 3",
-//         date: `${date1}`,
-//       }),
-//       headers: {
-//         "content-type": "application/json",
-//       },
-//     });
-//     const response = request.json();
-
-//     if (!response.ok) {
-//       throw "error";
-//     }
-//   } catch (error) {
-//     alert(error);
-//   }
-// }
-
-/*GET POSTS */
+//GET POSTS
 async function getPost() {
   try {
     const request = await fetch(urlAPI);

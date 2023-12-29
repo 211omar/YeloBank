@@ -1408,6 +1408,7 @@ body {
   font-size: 15px;
   line-height: 15px;
   margin-bottom: 4px;
+  white-space: nowrap;
 }
 .block .container .blocks_content .calculator .col_content .loan_calc .lc_inputs .lc_term .range_result {
   font-family: "m";
@@ -1761,7 +1762,7 @@ input[type=range]::-moz-range-thumb {
 .benefits .container .block_content .col:last-child .all_exchanges {
   background-color: red;
   margin: 25px -20px -20px;
-  border-top: 1px solid #ECECEC;
+  border-top: 1px solid #ececec;
   display: block;
   padding: 17px 30px;
   transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
@@ -2002,6 +2003,16 @@ input[type=range]::-moz-range-thumb {
     display: block;
     background-position: left 17px;
   }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .swiper {
